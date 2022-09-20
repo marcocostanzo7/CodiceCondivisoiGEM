@@ -1,32 +1,8 @@
 from logging import root
-import tkinter as tk 
+import tkinter as tk
+from tkinter.ttk import Style 
 import name2nucleotides as n2n
 from name2nucleotides import name2protein, protein2dna, reverse_dna
-
-# root = Tk()
-# root.geometry('450x450')
-
-# e = Entry(root, width = 100)
-# e.pack()
-# e.insert(0, 'Inserisci il tuo nome: ')
-# #frame = Frame(root, height = 450, width = 450)
-# #frame.pack()
-
-# def myClick():
-#     out = 'Il tuo nome in sequenza nucleotidica è: ' + e.get()
-#     myLabel = Label(root, text = out)
-#     myLabel.pack()
-
-# myButton = Button(root, text = 'aaa', command = myClick)
-# myButton.pack()
-
-# def hide():
-    
-
-# myButton2 = Button(root, text = 'clear', command = hide)
-# myButton2.pack()
-
-# root.mainloop()
 
 class Window:
     def __init__(self,master) -> None:
@@ -56,8 +32,8 @@ class Window:
     def risultato(self):
         #out2,out3=self.out()
         entry=name2protein(self.entry.get())
-        out = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry))+'\n' + str(reverse_dna(protein2dna(entry)))
-        # out = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + out2 + '\n' + out3
+        out = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
+        
         self.myLabel = tk.Label(root, text = out)
         self.myLabel.pack()
 
