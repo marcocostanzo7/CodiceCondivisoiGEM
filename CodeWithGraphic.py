@@ -8,13 +8,13 @@ class Window:
     def __init__(self,master) -> None:
         self.master = root
 
-        self.frame = tk.Frame(self.master, width = 450, height = 450)
+        self.frame = tk.Frame(self.master, width = 850, height = 550)
         self.frame.pack()
 
         self.entry = tk.Entry(root, width = 100)
         self.entry.insert(0, '')
         self.entry.pack()
-        self.entry.place(x = 50, y = 0)
+        self.entry.place(x = 100, y = 0)
 
         self.button = tk.Button(self.frame, text = 'Scopri la sequenza nucleotidica corrispondente', command = self.risultato)
         self.button.place(x = 50, y = 80)
@@ -33,7 +33,10 @@ class Window:
         #out2,out3=self.out()
         entry=name2protein(self.entry.get())
         out = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
-        
+        try:
+            self.myLabel.destroy()
+        except:
+            pass
         self.myLabel = tk.Label(root, text = out)
         self.myLabel.pack()
 
