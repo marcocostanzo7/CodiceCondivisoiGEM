@@ -1,5 +1,7 @@
+from cgitb import text
 from logging import root
 import tkinter as tk
+from tkinter.font import BOLD
 from tkinter.ttk import Style 
 import name2nucleotides as n2n
 from name2nucleotides import name2protein, protein2dna, reverse_dna, nameamm
@@ -21,6 +23,10 @@ class Window:
 
         self.button2 = tk.Button(self.frame, text = 'clear', command = self.label_del)
         self.button2.place(x = 200, y = 320)
+        self.myLabel0 = tk.Label(root, text = 'Scopri il tuo DNA')
+        self.myLabel0.place(x = 200, y = 25)
+        self.myLabel0.config(font = ('Arial',40))
+        self.myLabel0.pack()
     
     def label_del(self):
         self.myLabel.destroy()

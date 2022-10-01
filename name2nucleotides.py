@@ -65,7 +65,7 @@ def nameamm(sequence:str)->str:
         }
     for j in sequence:
         newsequence = amm_table[j]
-        amm = amm + newsequence + ','
+        amm = amm + newsequence + ' '
     return amm
 
 
@@ -82,7 +82,7 @@ def protein2dna(protein:str):
         'H':'CAC',
         'I':'ATC',
         'K':'AAG',
-        'L':'CTG',
+        'L':'TTG',
         'M':'ATG',
         'N':'AAC',
         'P':'CCC',
