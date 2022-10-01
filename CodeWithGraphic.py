@@ -14,13 +14,13 @@ class Window:
         self.entry = tk.Entry(root, width = 100)
         self.entry.insert(0, '')
         self.entry.pack()
-        self.entry.place(x = 100, y = 0)
+        self.entry.place(x = 250, y = 200)
 
         self.button = tk.Button(self.frame, text = 'Scopri la sequenza nucleotidica corrispondente', command = self.risultato)
-        self.button.place(x = 50, y = 80)
+        self.button.place(x = 200, y = 280)
 
         self.button2 = tk.Button(self.frame, text = 'clear', command = self.label_del)
-        self.button2.place(x = 50, y = 120)
+        self.button2.place(x = 200, y = 320)
     
     def label_del(self):
         self.myLabel.destroy()
