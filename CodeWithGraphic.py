@@ -2,7 +2,7 @@ from logging import root
 import tkinter as tk
 from tkinter.ttk import Style 
 import name2nucleotides as n2n
-from name2nucleotides import name2protein, protein2dna, reverse_dna
+from name2nucleotides import name2protein, protein2dna, reverse_dna, nameamm
 
 class Window:
     def __init__(self,master) -> None:
@@ -32,12 +32,13 @@ class Window:
     def risultato(self):
         #out2,out3=self.out()
         entry=name2protein(self.entry.get())
-        out = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
+        out1 = 'Il tuo nome in sequenza amminoacidica è: ' + '\n' + str(nameamm(entry)) + '\n'
+        out2 = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
         try:
             self.myLabel.destroy()
         except:
             pass
-        self.myLabel = tk.Label(root, text = out)
+        self.myLabel = tk.Label(root,text= out1 + out2)
         self.myLabel.pack()
 
 

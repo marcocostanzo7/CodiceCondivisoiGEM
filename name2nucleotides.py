@@ -39,6 +39,37 @@ def name2protein(name:str)->str:
     newname="".join(newname)
     return newname
 
+def nameamm(sequence:str)->str:
+    amm = ''
+    amm_table = {
+        'A':'Ala',
+        'C':'Cys',
+        'D':'Asp',
+        'E':'Glu',
+        'F':'Phe',
+        'G':'Gly',
+        'H':'Hys',
+        'I':'Ile',
+        'K':'Lys',
+        'L':'Leu',
+        'M':'Met',
+        'N':'Asn',
+        'P':'Pro',
+        'Q':'Gln',
+        'R':'Arg',
+        'S':'Ser',
+        'T':'Thr',
+        'V':'Val',
+        'W':'Trp',
+        'Y':'Tyr'  
+        }
+    for j in sequence:
+        newsequence = amm_table[j]
+        amm = amm + newsequence + ','
+    return amm
+
+
+
 def protein2dna(protein:str):
     dna = ''
     codon_table = {
