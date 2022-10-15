@@ -5,6 +5,7 @@ from tkinter.font import BOLD
 from tkinter.ttk import Style 
 import name2nucleotides as n2n
 from name2nucleotides import name2protein, protein2dna, reverse_dna, nameamm
+from name2pdbid import get_id
 
 class Window:
     def __init__(self,master) -> None:
@@ -40,11 +41,12 @@ class Window:
         entry=name2protein(self.entry.get())
         out1 = 'Il tuo nome in sequenza amminoacidica è: ' + '\n' + str(nameamm(entry)) + '\n'
         out2 = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
+        out3 = 'Il tuo id è: ' + '\n' + str(get_id(entry)) 
         try:
             self.myLabel.destroy()
         except:
             pass
-        self.myLabel = tk.Label(root,text= out1 + out2)
+        self.myLabel = tk.Label(root,text= out1 + out2 + out3)
         self.myLabel.pack()
 
 
