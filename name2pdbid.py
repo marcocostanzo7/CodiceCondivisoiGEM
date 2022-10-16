@@ -1,10 +1,6 @@
-f  = open("id.txt")
-
-#user = input('Si inserisca il prorpio nome: ')
-
-
-
 def get_id(user):
+    f  = open("id.txt")
+
     user.upper()
 
     value = {
@@ -46,9 +42,9 @@ def get_id(user):
 
     for i in user:
         numb = numb  + value[i]
-    print(numb)
     result = f.readlines()
-    
-    return result[numb]
 
+    f.close()
+
+    return result[numb]
 
