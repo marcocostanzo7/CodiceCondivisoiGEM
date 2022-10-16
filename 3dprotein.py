@@ -12,7 +12,6 @@ sys.path.append("/opt/homebrew/bin/pymol")
 import pymol
 
 
-
 def showStructurePyMOL(structura=None,pdb_id=None):
     '''
     Show structure using pymodule scripting
