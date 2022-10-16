@@ -40,7 +40,7 @@ class Window:
         #out2,out3=self.out()
         entry=name2protein(self.entry.get())
         out1 = 'Il tuo nome in sequenza amminoacidica è: ' + '\n' + str(nameamm(entry)) + '\n'
-        out2 = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry)))
+        out2 = 'Il tuo nome in sequenza nucleotidica è: ' + '\n' + str(protein2dna(entry)) +'\n' + str(reverse_dna(protein2dna(entry))) + '\n'
         out3 = 'Il tuo id è: ' + '\n' + str(get_id(entry)) 
         try:
             self.myLabel.destroy()
